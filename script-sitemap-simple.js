@@ -1,19 +1,22 @@
 // ---------------------------------------------------
-// Maqallacom
+// BLOGTOC
 // ---------------------------------------------------
-// Maqallacom creates a clickable Table Of Contents for
+// BlogToc creates a clickable Table Of Contents for
 // Blogger Blogs.
 // It uses the JSON post feed, and create a ToC of it.
 // The ToC can be sorted by title or by date, both
 // ascending and descending, and can be filtered by
 // label.
 // ---------------------------------------------------
-// Author: Site Maqalla
-// Url: https://www.maqalla.com
-// Version: 1
-// Date: 2021-12-06
+// Author: Beautiful Beta
+// Url: http://beautifulbeta.blogspot.com
+// Version: 2
+// Date: 2007-04-12
 // ---------------------------------------------------
-
+// Modified by Aneesh 
+// www.bloggerplugins.org
+// Date : 02-08-2011
+// global arrays
 
    var postTitle = new Array();     // array of posttitles
    var postUrl = new Array();       // array of posturls
@@ -180,11 +183,11 @@ function displayToc(filter) {
    var numDisplayed = 0;
    var tocTable = '';
    var tocHead1 = 'عنوان المقالة';
-   var tocTool1 = 'للترتيب حسب الحروف';
-   var tocHead2 = 'تاريخ النشر';
-   var tocTool2 = 'للترتيب حسب التاريخ';
-   var tocHead3 = 'التصنيف';
-   var tocTool3 = 'للترتيب حسب التصنيف';
+   var tocTool1 = 'Click to sort by title';
+   var tocHead2 = 'POST DATE';
+   var tocTool2 = 'Click to sort by date';
+   var tocHead3 = 'LABELS';
+   var tocTool3 = '';
    if (sortBy == "titleasc") { 
       tocTool1 += ' (descending)';
       tocTool2 += ' (newest first)';
@@ -197,6 +200,7 @@ function displayToc(filter) {
       tocTool1 += ' (ascending)';
       tocTool2 += ' (newest first)';
    }
+ 
    if (sortBy == "datenewest") { 
       tocTool1 += ' (ascending)';
       tocTool2 += ' (oldest first)';
